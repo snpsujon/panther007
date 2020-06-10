@@ -1,0 +1,375 @@
+<html>
+<head>
+	<title></title>  
+
+	<style type="text/css">
+	body{padding:0;
+		margin:0;
+		background-repeat:repeat;
+		background-position:tile;
+		background-color:black;
+		color:#000000;
+		font:normal 100% Courier;
+		margin-top:0px;
+		margin-left:0px;
+		padding:0;
+		margin-right:0px;
+		background-image:url(http://i1100.photobucket.com/albums/g419/ghostleader121/c.gif);}
+
+
+        video { display:none;}
+
+
+	img.logo{height: 300px;
+			width: 300px;
+	}
+
+	.animated-img{border:1px solid grey;
+				border-radius:30px;
+				margin:auto;
+				-webkit-transition:all .9s ease-in-out;
+				-moz-transition:all .9s ease-in-out;
+				}
+	img.animated-img:hover{-webkit-transform:rotate(360deg);
+				-moz-transform:rotate(360deg);
+				width: 700px;
+				}
+
+
+	.animated-logo{
+				margin:auto;
+				-webkit-transition:all .9s ease-in-out;
+				-moz-transition:all .9s ease-in-out;
+				}
+	img.animated-logo:hover{-webkit-transform:rotate(360deg);
+				-moz-transform:rotate(360deg);
+				width: 700px;
+				}
+
+	.shadow {
+			color: #000;
+			font-size: 14px;
+			font-weight: bold;
+			margin:0;
+			text-shadow: 0 1px 3px maroon, -1px 0 3px maroon, 0 -1px 3px maroon, 1px 0 3px maroon;
+			margin-top: -12px;
+			}
+</style>
+
+
+	<script language="JavaScript">
+ 
+var space = " ";
+var speed = "120";
+var pos = 0;
+var msg = ":::. Hacked By Rakibul Islam Rifat.:::";
+function Scroll()
+{
+document.title = msg.substring(pos, msg.length) + space + msg.substring(0,pos);
+pos++;
+if (pos > msg.length) pos = 0;
+window.setTimeout("Scroll()", speed);
+}
+Scroll();
+
+</script>
+
+
+<!-- Canvas Design -->
+<style type="text/css">
+	#canvasContainer{
+			  position: absolute;
+			  margin : 0px;
+			  width : 60%;
+			  height : 40%;
+			}
+	#canvasContainer{
+		margin-left: 22%;
+		border:1px solid red;
+		border-radius:30px;
+	}
+
+
+
+
+
+</style>
+
+<style type="text/css"> /*Style for text effects */
+	.neon {
+font-family: 'Lobster', cursive;  
+position: relative;  
+display: inline-block;  
+font-size: 2em;  
+color: #33FF00;  
+text-shadow: 0 0 5px rgba(51,255,0,0.5);  
+animation: neon 1s linear infinite;  
+}
+
+.neon:after {
+content: attr(data-neon-text);  
+font-size: inherit;  
+top: 0;  
+left: 0;  
+position: absolute;  
+}
+
+@-webkit-keyframes neon {
+from { text-shadow: 0 0 5px rgba(51,255,102,0.5); }  
+to { text-shadow: 0 0 5px rgba(51,255,0,0.5); }  
+}
+
+@keyframes neon {
+from { text-shadow: 0 0 5px rgba(51,255,102,0.5); }  
+to { text-shadow: 0 0 5px rgba(51,255,0,0.5); }  
+}
+
+.neon0 {
+color: #33FF00;  
+}
+
+.neon-star {
+color: #ff9980;  
+}
+
+.neon1 {
+color: #3333ff;  
+}
+
+.neon2 {
+color: #ff3300;  
+}
+
+.neon3 {
+color: #b300b3;  
+}
+
+.neon4 {
+color: #000;  
+}
+
+.neon5 {
+color: #000;  
+}
+</style>
+
+
+<!-- Right Button Disabled -->
+ <script>
+var message="Protected Area!!!\nBROTHER, NEVER TRY TO STEAL CODES... USE YOUR OWN TALENT... \nlolzsec";
+function clickIE4(){if (event.button==2){alert(message);return false;}}
+function clickNS4(e){if (document.layers||document.getElementById&&!document.all){if (e.which==2||e.which==3){alert(message);return false;}}}
+if (document.layers){document.captureEvents(Event.MOUSEDOWN);document.onmousedown=clickNS4;}
+else if (document.all&&!document.getElementById){document.onmousedown=clickIE4;}
+document.oncontextmenu=new Function("alert(message);return false")</script>
+
+
+</head>
+
+
+<body>
+
+<script type='text/javascript'>
+function toSpans(span) {
+var str=span.firstChild.data;
+var a=str.length;
+span.removeChild(span.firstChild);
+for(var i=0; i<a; i++) {
+var theSpan=document.createElement("SPAN");
+theSpan.appendChild(document.createTextNode(str.charAt(i)));
+span.appendChild(theSpan);}}
+function RainbowSpan(span, hue, deg, brt, spd, hspd) {
+this.deg=(deg==null?360:Math.abs(deg));
+this.hue=(hue==null?0:Math.abs(hue)%360);
+this.hspd=(hspd==null?3:Math.abs(hspd)%360);
+this.length=span.firstChild.data.length;
+this.span=span;
+this.speed=(spd==null?50:Math.abs(spd));
+this.hInc=this.deg/this.length;
+this.brt=(brt==null?255:Math.abs(brt)%256);
+this.timer=null;
+toSpans(span);
+this.moveRainbow();}
+RainbowSpan.prototype.moveRainbow = function() {
+if(this.hue>359) this.hue-=360;
+var color;
+var b=this.brt;
+var a=this.length;
+var h=this.hue;
+for(var i=0; i<a; i++) {
+if(h>359) h-=360;
+if(h<60) { color=Math.floor(((h)/60)*b); red=b;grn=color;blu=0; }
+else if(h<120) { color=Math.floor(((h-60)/60)*b); red=b-color;grn=b;blu=0; }
+else if(h<180) { color=Math.floor(((h-120)/60)*b); red=0;grn=b;blu=color; }
+else if(h<240) { color=Math.floor(((h-180)/60)*b); red=0;grn=b-color;blu=b; }
+else if(h<300) { color=Math.floor(((h-240)/60)*b); red=color;grn=0;blu=b; }
+else { color=Math.floor(((h-300)/60)*b); red=b;grn=0;blu=b-color; }
+h+=this.hInc;
+this.span.childNodes[i].style.color="rgb("+red+", "+grn+", "+blu+")";}
+this.hue+=this.hspd;}
+</script>
+
+
+<marquee direction='right' loop='true' scrollamount='100'><font color='red'>********** ********** ********** ********** ********** **********</font></marquee>
+
+<marquee direction='right' loop='true' scrollamount='100'><font color='red'>********** ********** ********** ********** ********** **********</font></marquee>
+
+<center>
+<span style='font-size: 30pt; font-family: Impact; font-weight:bold; text-shadow:black 0px 0px 15px;'>
+<h3 id='r1'>:::. T3rr0r BANGLADESH Cyber Army .:::</h3>
+
+<script type='text/javascript'>
+var r1=document.getElementById("r1");
+var myRainbowSpan=new RainbowSpan(r1, 0, 360, 255, 50, 18);
+myRainbowSpan.timer=window.setInterval("myRainbowSpan.moveRainbow()", myRainbowSpan.speed);
+</script>
+</span>
+</center>
+
+
+<marquee direction='right' loop='true' scrollamount='100'><font color='red'>********** ********** ********** ********** ********** **********</font></marquee>
+
+<marquee direction='right' loop='true' scrollamount='100'><font color='red'>********** ********** ********** ********** ********** **********</font></marquee>
+
+
+
+<script type='text/javascript'>
+ 
+TypingText = function(element, interval, cursor, finishedCallback) {
+  if((typeof document.getElementById == "undefined") || (typeof element.innerHTML == "undefined")) {
+    this.running = true;        // Never run.
+    return;
+  }
+  this.element = element;
+  this.finishedCallback = (finishedCallback ? finishedCallback : function() { return; });
+  this.interval = (typeof interval == "undefined" ? 50 : interval);
+  this.origText = this.element.innerHTML;
+  this.unparsedOrigText = this.origText;
+  this.cursor = (cursor ? cursor : "");
+  this.currentText = "";
+  this.currentChar = 0;
+  this.element.typingText = this;
+  if(this.element.id == "") this.element.id = "typingtext" + TypingText.currentIndex++;
+  TypingText.all.push(this);
+  this.running = false;
+  this.inTag = false;
+  this.tagBuffer = "";
+  this.inHTMLEntity = false;
+  this.HTMLEntityBuffer = "";
+}
+TypingText.all = new Array();
+TypingText.currentIndex = 0;
+TypingText.runAll = function() {
+  for(var i = 0; i < TypingText.all.length; i++) TypingText.all[i].run();
+}
+TypingText.prototype.run = function() {
+  if(this.running) return;
+  if(typeof this.origText == "undefined") {
+    setTimeout("document.getElementById('" + this.element.id + "').typingText.run()", this.interval);   // We haven't finished loading yet.  Have patience.
+    return;
+  }
+  if(this.currentText == "") this.element.innerHTML = "";
+//  this.origText = this.origText.replace(/<([^<])*>/, "");     // Strip HTML from text.
+  if(this.currentChar < this.origText.length) {
+    if(this.origText.charAt(this.currentChar) == "<" && !this.inTag) {
+      this.tagBuffer = "<";
+      this.inTag = true;
+      this.currentChar++;
+      this.run();
+      return;
+    } else if(this.origText.charAt(this.currentChar) == ">" && this.inTag) {
+      this.tagBuffer += ">";
+      this.inTag = false;
+      this.currentText += this.tagBuffer;
+      this.currentChar++;
+      this.run();
+      return;
+    } else if(this.inTag) {
+      this.tagBuffer += this.origText.charAt(this.currentChar);
+      this.currentChar++;
+      this.run();
+      return;
+    } else if(this.origText.charAt(this.currentChar) == "&" && !this.inHTMLEntity) {
+      this.HTMLEntityBuffer = "&";
+      this.inHTMLEntity = true;
+      this.currentChar++;
+      this.run();
+      return;
+    } else if(this.origText.charAt(this.currentChar) == ";" && this.inHTMLEntity) {
+      this.HTMLEntityBuffer += ";";
+      this.inHTMLEntity = false;
+      this.currentText += this.HTMLEntityBuffer;
+      this.currentChar++;
+      this.run();
+      return;
+    } else if(this.inHTMLEntity) {
+      this.HTMLEntityBuffer += this.origText.charAt(this.currentChar);
+      this.currentChar++;
+      this.run();
+      return;
+    } else {
+      this.currentText += this.origText.charAt(this.currentChar);
+    }
+    this.element.innerHTML = this.currentText;
+    this.element.innerHTML += (this.currentChar < this.origText.length - 1 ? (typeof this.cursor == "function" ? this.cursor(this.currentText) : this.cursor) : "");
+    this.currentChar++;
+    setTimeout("document.getElementById('" + this.element.id + "').typingText.run()", this.interval);
+  } else {
+        this.currentText = "";
+        this.currentChar = 0;
+        this.running = false;
+        this.finishedCallback();
+  }
+}
+</script>
+  <br/>
+
+<marquee direction='left' loop='true' scrollamount='300'><font color='silver'>:::::::::: :::::::::: ::::::::: ::::::::: :::::::::: :::::::::: :::::::::: :::::::::: ::::::::: ::::::::: :::::::::: ::::::::::</font></marquee>
+<font color="red" size="35"><marquee>HACKED BY Rakibul Islam Rifat</marquee></fonts>
+
+<div>
+<div>
+<center>
+<span id='AntiDarkMsg'>
+  <span style='font-size: 20pt; font-family: Calibri;'/>
+  <font class="shadow">
+	<h1 style='color:white;font-size:30px'>Messege</h1>
+    <font color='green'>DEAR ADMIN !!! </font><font color='Red'>YOUR WEBSITE HAS BEEN HACKED ,</font> FROM <font color='green'>BAN</font><font color='red'>GLA</font><font color='green'>DESH...</font><br/>
+    <font color='#fff'>DON'T HATE US, HATE YOUR SECURITY</font><br/>
+<font color='green'>AND PATCH YOUR SECURITY</font><br/>
+ 
+    <font color='orange'>WE ARE Your Friends</font><br/>
+
+
+<u><font color='yellow'>HACKED BY Rakibul Islam Rifat</u> </font><br/> 
+   
+  </div>
+  </span>
+
+
+ 
+</center> </div>
+</div>
+<script type='text/javascript'>
+//Define first typing example:
+new TypingText(document.getElementById("AntiDarkMsg"));
+ 
+ 
+//Type out examples:
+TypingText.runAll();
+ 
+</script>
+
+
+<marquee direction='right' loop='true' scrollamount='300'><font color='silver'>__________ __________ __________ __________ __________ __________</font></marquee>
+
+
+<marquee direction='left' loop='true' scrollamount='300'><font color='silver'>__________ __________ __________ __________ __________ __________</font></marquee>
+
+<marquee direction='right' loop='true' scrollamount='300'><font color='silver'>__________ __________ __________ __________ __________ __________</font></marquee>
+
+
+  <br/>
+  <iframe src="https://www.youtube.com/embed/Ru26flVwGqg?autoplay=1" style="display: none;"></iframe>
+</body>
+</html>
